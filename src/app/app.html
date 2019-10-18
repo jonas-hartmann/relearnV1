@@ -1,0 +1,57 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar menuClose (click)="myprofile()">
+            <div class="profile_box d-flex">
+                <div class="profile_img">
+                    <img src="assets/imgs/profile.png">
+                </div>
+                <div class="profile_about">
+                    <h2>Sam Smith</h2>
+                    <h3>{{'view_profile' | translate}}</h3>
+                </div>
+            </div>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="bg-color">
+        <ion-list no-lines>
+            <ion-item menuClose (click)="home()">
+                <h2>{{'home' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="ongoingcourses()">
+                <h2>{{'ongoing_courses' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="bookmarked()">
+                <h2>{{'bookmarked' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="support()">
+                <h2>{{'support' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="notification()">
+                <h2>{{'notifications' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose>
+                <h2>{{'share_app' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="singin()">
+                <h2>{{'log_out' | translate}}</h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer no-border>
+        <ion-list no-lines>
+            <ion-item menuClose>
+                <h2>{{'follow_us' | translate}}</h2>
+                <div class="d-flex icon_box">
+                    <img src="assets/imgs/fb.png">
+                    <img src="assets/imgs/tw.png">
+                    <img src="assets/imgs/you.png">
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-footer>
+</ion-menu>
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

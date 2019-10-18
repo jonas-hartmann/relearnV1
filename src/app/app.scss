@@ -1,0 +1,724 @@
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../assets/font/GoogleSans-Regular.woff2') format('woff2'), url('../assets/font/GoogleSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../assets/font/GoogleSans-MediumItalic.woff2') format('woff2'), url('../assets/font/GoogleSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../assets/font/GoogleSans-Bold.woff2') format('woff2'), url('../assets/font/GoogleSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../assets/font/GoogleSans-BoldItalic.woff2') format('woff2'), url('../assets/font/GoogleSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../assets/font/GoogleSans-Medium.woff2') format('woff2'), url('../assets/font/GoogleSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../assets/font/GoogleSans-Italic.woff2') format('woff2'), url('../assets/font/GoogleSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/font/material_icons.woff2') format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+*,
+body,
+html,
+a,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+d,
+strong,
+lable,
+li {
+    font-family: 'Google Sans';
+    //letter-spacing: .5px;
+}
+
+$theme-color:#ff3939;
+$bg-color: #f3f5f5;
+$white: #fff;
+$gray:#808080;
+$fb_color:#3a48b1;
+$green_color:#80d138;
+
+.bg-theme {
+    background: $theme-color;
+}
+
+.text-theme {
+    color: $theme-color !important;
+}
+
+.bg-color {
+    background: $bg-color;
+}
+
+.button {
+    &.btn {
+        font-size: 1.55rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        height: 45px;
+        box-shadow: none;
+        background: $theme-color;
+        text-transform: none;
+        letter-spacing: .5px;
+
+
+        &:hover:not(.disable-hover) {
+            background: $theme-color;
+        }
+
+        .button-inner {
+            //letter-spacing: 2px;
+        }
+
+        &[block] {
+            border-radius: 7px;
+        }
+
+    }
+}
+
+
+.d-flex {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+
+    .end {
+        margin-left: auto;
+        margin-right: 0;
+        display: block;
+    }
+}
+
+.header {
+    &.bg-transparent {
+        .toolbar-background {
+            background: transparent !important;
+        }
+    }
+
+    &::after {
+        display: none;
+    }
+
+    .toolbar {
+        .toolbar-background {
+            background-color: $theme-color;
+            border: none !important;
+        }
+
+        .title {
+            .toolbar-title {
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: $white;
+                display: flex;
+                align-items: center;
+                letter-spacing: .5px !important;
+                text-transform: none;
+
+                ion-icon {
+                    font-size: 2.2rem;
+                }
+            }
+
+            .end {
+                margin-left: auto !important;
+
+            }
+        }
+    }
+
+    .bar-buttons {
+        color: $white;
+        z-index: 999;
+    }
+
+    .back-button {
+        color: $white;
+        z-index: 999;
+
+        .ion-md-arrow-back:before {
+            content: "\f3cf";
+        }
+    }
+
+    .toolbar-ios {
+        ion-title {
+            padding: 0 16px;
+            position: unset;
+
+            .toolbar-title-ios {
+                text-align: justify;
+            }
+        }
+
+        .bar-buttons-ios {
+            color: $white;
+        }
+
+        .back-button-text {
+            display: none;
+        }
+
+        .back-button.show-back-button {
+            color: $white;
+
+            .ion-md-arrow-back:before {
+                content: "\f3cf" !important;
+            }
+        }
+    }
+
+    .bar-button-default:hover:not(.disable-hover) {
+        color: lighten($gray, 100%);
+    }
+}
+
+
+
+.form {
+    display: block;
+    width: calc(100% - 55px);
+    margin: 0 auto;
+
+    .list {
+        background: $white;
+        border-radius: 7px;
+        overflow: hidden;
+        margin: 0;
+    }
+
+
+    .item {
+        padding: 2px 20px 3px 20px;
+        border-radius: 0px;
+        border: none !important;
+        box-shadow: none !important;
+        background: darken($bg-color, 2%);
+        align-items: center;
+        border-radius: 7px;
+        margin-bottom: 8px;
+
+        .item-inner {
+            border: none !important;
+            box-shadow: none !important;
+            margin-left: 0 !important;
+            padding: 0;
+
+            .label {
+                font-size: 1.9rem;
+                color: lighten($gray, 0%);
+                text-transform: none;
+                opacity: 1 !important;
+                margin: 0px;
+            }
+
+            ion-textarea,
+            ion-input {
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-top: 0px;
+                color: darken($gray, 20%);
+
+                .text-input {
+                    margin: 0;
+                }
+
+                ::-webkit-input-placeholder {
+                    color: lighten($gray, 10%);
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    letter-spacing: 0;
+                }
+
+                ::-moz-placeholder {
+                    color: lighten($gray, 20%);
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    letter-spacing: .5px;
+                }
+
+                :-ms-input-placeholder {
+                    color: lighten($gray, 20%);
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    letter-spacing: .5px;
+                }
+
+                :-moz-placeholder {
+                    color: lighten($gray, 20%);
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    letter-spacing: .5px;
+                }
+            }
+        }
+
+        &.item-input-has-focus {
+            .label {
+                color: $gray;
+            }
+        }
+
+        img {
+            &[item-start] {
+                margin: 0;
+                width: 20px;
+                margin: 0 15px;
+            }
+
+        }
+
+        h3 {
+            margin: 0 !important;
+            height: 44px;
+            line-height: 44px;
+            font-weight: 500;
+            font-size: 1.38rem;
+            position: relative;
+            color: $theme-color;
+        }
+    }
+
+    .row {
+        margin: 0 -3.7px;
+
+        .col {
+            padding: 0 3.7px;
+        }
+    }
+}
+
+
+.menu-inner {
+    width: 80%;
+
+    .header {
+        .toolbar-content {
+            .profile_box {
+                padding: 40px 28px 40px 28px;
+
+                .profile_img {
+                    position: relative;
+                    overflow: hidden;
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 20px;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: -50% !important;
+                        right: -50% !important;
+                        bottom: 0;
+                        width: 100%;
+                        height: auto;
+                        margin: auto;
+                    }
+                }
+
+
+                .profile_about {
+                    h2 {
+                        color: $white;
+                        margin: 0;
+                        font-size: 1.8rem;
+                        font-weight: 400;
+                        margin-bottom: 2px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+
+                    h3 {
+                        color: lighten($gray, 50%);
+                        margin: 0;
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                        letter-spacing: .5px;
+                        opacity: .6;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    .list {
+        margin: 0;
+        margin-top: 26px;
+
+        .item {
+            background: none;
+            padding: 0px 35px 5px 35px;
+
+            ion-icon {
+                &[item-start] {
+                    color: $theme-color;
+                    margin: 0;
+                    font-size: 2.4rem;
+                    margin-right: 23px;
+                }
+            }
+
+            .item-inner {
+                padding: 0;
+                margin: 0;
+
+                .label {
+                    margin: 0;
+
+                    h2 {
+                        color: darken($white, 100%);
+                        font-size: 1.75rem;
+                        font-weight: 500;
+                        padding-bottom: 5px;
+                    }
+
+                    .icon_box {
+                        margin: 0 -7px;
+                        padding-bottom: 10px;
+                        padding-top: 10px;
+
+                        img {
+                            width: 38px;
+                            margin: 0 7px;
+                        }
+                    }
+                }
+
+                ion-badge {
+                    &[item-end] {
+                        margin: 0;
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                        border-radius: 50%;
+                        padding: 3px 6px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        .list {
+            margin-top: 0;
+
+            .item {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+
+[dir="rtl"] body {
+    .header {
+        .toolbar {
+            .title {
+                .toolbar-title {
+                    .end {
+                        margin-left: 0 !important;
+                        margin-right: auto !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .d-flex {
+        .end {
+            margin-left: 0;
+            margin-right: auto;
+        }
+    }
+
+    .form {
+        ion-label {
+            transform-origin: right top !important;
+            margin-right: 0;
+        }
+
+        .item .item-inner ion-textarea .text-input,
+        .item .item-inner ion-input .text-input {
+            text-align: right;
+        }
+
+    }
+
+    page-home {
+        .banner ion-searchbar {
+            .searchbar-input {
+                padding: 10px 46px 10px 19px;
+                text-align: right;
+            }
+
+            .searchbar-search-icon {
+                left: unset;
+                right: 16px;
+                transform: rotate(81deg);
+            }
+
+            &.searchbar-ios {
+                height: auto;
+
+                .searchbar-input {
+                    padding: 10px 46px 10px 19px !important;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .courses_categories .list .item {
+            padding: 13px 0px 14px 18px;
+
+            &::after {
+                left: 0;
+                right: unset;
+            }
+
+            .img_box {
+                margin-right: 0px;
+                margin-left: 19px;
+            }
+        }
+    }
+
+    page-search .header {
+        ion-searchbar {
+            .searchbar-input {
+                padding: 10px 46px 10px 19px;
+                text-align: right;
+            }
+
+            .searchbar-search-icon {
+                left: unset;
+                right: 16px;
+                transform: rotate(81deg);
+            }
+
+            &.searchbar-ios {
+                height: auto;
+
+                .searchbar-input {
+                    padding: 10px 46px 10px 19px !important;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    page-design .recent_searches ion-scroll .item_scroll {
+        &:first-child {
+            margin-right: 22px;
+            margin-left: 6px
+        }
+
+        &:last-child {
+            margin-left: 22px;
+            margin-right: 6px
+        }
+
+    }
+
+    page-ongoingcourses,
+    page-bookmarked,
+    page-category {
+        .header .toolbar .title .toolbar-title ion-icon:last-child {
+            padding-right: 6px;
+            padding-left: 0px;
+        }
+
+        .list .item {
+            padding: 16px 0px 17px 18px;
+
+            .img_box {
+                margin-left: 19px;
+                margin-right: 0;
+            }
+
+            &::after {
+                right: unset;
+                left: 0;
+            }
+        }
+    }
+
+    page-courcedetails {
+        .header .toolbar .title .toolbar-title ion-icon:last-child {
+            padding-right: 6px;
+            padding-left: 0px;
+        }
+
+        .list {
+            .item {
+                &.course_brief .row .col.d-flex ion-icon {
+                    margin-right: 0px;
+                    margin-left: 16px;
+                }
+
+                &.created_by .creator_details .img_box {
+                    margin-right: 0px;
+                    margin-left: 20px;
+                }
+            }
+
+            &.videos .item .item-inner .label .video_details h3 {
+                margin-right: 0px;
+                margin-left: 10px;
+            }
+
+            &.reviews {
+                .item .rating_box .ratings {
+                    margin-right: 0px;
+                    margin-left: 10px;
+                }
+
+                .student_feedbacks .item .student_details .student_img {
+                    margin-right: 0px;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+
+    page-lecturerprofile {
+        .list .banner .item .lecturer_details .lecturer_img {
+            margin-right: 8px;
+            margin-left: 20px;
+        }
+
+        .list.video_section {
+            .item {
+                padding: 16px 0px 17px 18px;
+
+                .img_box {
+                    margin-left: 19px;
+                    margin-right: 0;
+                }
+
+                &::after {
+                    right: unset;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    page-course {
+        .header .toolbar .title .toolbar-title ion-icon:last-child {
+            padding-right: 6px;
+            padding-left: 0px;
+        }
+
+        .scroll-content {
+            .banner .video_box .video_footer {
+                .seekbar_time p {
+                    padding-left: 0px;
+                    padding-right: 8px;
+                }
+
+                ion-icon {
+                    padding: 0 15px 0 9px;
+                }
+            }
+
+            .list {
+                .item .item-inner .label h3 {
+                    margin-right: 0px;
+                    margin-left: 10px;
+                }
+
+                &.more .item ion-icon[item-start] {
+                    margin-right: 0px !important;
+                    margin-left: 20px !important;
+                }
+            }
+        }
+    }
+
+    page-support .list .item {
+
+        .item-inner .textarea_box ion-icon,
+        .item-inner .label h3 ion-icon {
+            margin-right: 0px;
+            margin-left: 25px;
+        }
+    }
+
+    page-myprofile .list .item {
+        .item-inner .input-wrapper .input .text-input {
+            text-align: right;
+        }
+
+        ion-icon[item-start] {
+            margin-right: 0px !important;
+            margin-left: 20px !important;
+        }
+    }
+
+    .menu-inner .header .toolbar-content .profile_box .profile_img {
+        margin-right: 0px;
+        margin-left: 20px;
+    }
+
+
+
+}
